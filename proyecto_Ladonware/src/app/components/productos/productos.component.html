@@ -1,0 +1,32 @@
+<main class="contenedor">
+    <h3>Lista de Productos</h3>
+    <section class="servicio">
+
+        <div class="leyendas">
+            <h4>Nombre</h4>
+            <h4>Categoría</h4>
+            <h4>Precio</h4>
+            <h4>Cantidad</h4>
+            <h4>Inventario</h4>
+            <h4>Acción</h4>
+        </div>
+        <div *ngFor="let producto of productos" class="productos">
+            <a [routerLink]="['/producto', producto._id]" class="detalleproducto">
+                <div class="image">
+                    <img src="{{url+'get-image/'+producto.image}}" *ngIf="producto.image">
+                </div>
+                <p>{{producto.nombre}}</p>
+            </a>
+
+            <p>{{producto.categoria}}</p>
+            <p>{{producto.precio}}</p>
+            <p>{{producto.cantidad}}</p>
+            <p>{{producto.inventario}}</p>
+            <p>
+                <a [routerLink]="[ '/editar-producto', producto._id] " class="boton boton-edit" style="color: #fff">Editar</a>
+                <a [routerLink]="['/producto', producto._id]" class=" boton boton-delete" style="color: #fff">Borrar</a>
+            </p>
+        </div>
+    </section>
+
+</main>

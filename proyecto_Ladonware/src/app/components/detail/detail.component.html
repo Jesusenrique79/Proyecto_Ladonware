@@ -1,0 +1,24 @@
+<div class="container" *ngIf="producto">
+    <div class=" image ">
+        <img src="{{url+ 'get-image/'+producto.image}} " *ngIf="producto.image ">
+    </div>
+
+    <div class="leyendas ">
+        <h4>Nombre</h4>
+        <h4>{{producto.nombre}}</h4>
+        <h4>Categoría</h4>
+        <p>{{producto.categoria}}</p>
+        <h4>Precio</h4>
+        <p>{{producto.precio}}</p>
+        <h4>Cantidad</h4>
+        <p>{{producto.cantidad}}</p>
+        <h4>Inventario</h4>
+        <p>{{producto.inventario}}</p>
+    </div>
+
+</div>
+
+<p>
+    <a [routerLink]="[ '/editar-producto', producto._id] " class="boton boton-edit ">Editar</a>
+    <a (click)="deleteProducto(producto._id) " class=" boton boton-delete ">Borrar</a>
+</p>

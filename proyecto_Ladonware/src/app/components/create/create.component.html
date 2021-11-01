@@ -1,0 +1,42 @@
+<div class="container" *ngIf="producto">
+    <h4>{{title}}</h4>
+    <div class=" message success " *ngIf="status == 'success' ">
+        El producto se ha creado correctamente, puedes <a [routerLink]="[ '/producto', save_producto._id] "> verlo aquí</a>
+    </div>
+    <div class="message failed " *ngIf="status=='failed' ">
+        El producto No se ha podido crear
+    </div>
+
+    <form #productoForm="ngForm" (ngSubmit)="onSubmit(productoForm)">
+        <p>
+            <label for="nombre">Nombre</label>
+            <input type="text" name="nombre" #nombre="ngModel" [(ngModel)]="producto.nombre">
+        </p>
+        <p>
+            <label for="categoria">Categoría</label>
+            <input type="text" name="categoria" #categoria="ngModel" [(ngModel)]="producto.categoria">
+        </p>
+        <p>
+            <label for="precio">Precio</label>
+            <input type="number" name="precio" #precio="ngModel" [(ngModel)]="producto.precio">
+        </p>
+        <p>
+            <label for="cantidad">Cantidad</label>
+            <input type="number" name="cantidad" #cantidad="ngModel" [(ngModel)]="producto.cantidad">
+        </p>
+
+        <p>
+            <label for="inventario">Inventario</label>
+            <input type="text" name="inventario " #inventario="ngModel" [(ngModel)]="producto.inventario">
+        </p>
+        <p>
+            <span class="image" *ngIf="producto.image" style="float:none;">
+                <img src="{{url+ 'get-image/'+producto.image}} " *ngIf="producto.image" style="width:100px;">
+            </span><br>
+            <label for="imagen">Imagen del Producto</label>
+            <input type="file" name="imagen " placeholder="Subir imagen " (change)="fileChangeEvent($event)">
+        </p>
+        <input type="submit" value="Enviar">
+
+    </form>
+</div>

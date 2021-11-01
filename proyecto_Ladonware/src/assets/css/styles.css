@@ -1,0 +1,188 @@
+:root {
+    --azul: rgb(191, 240, 240);
+    --blanco: white;
+    --negro: #000;
+    --azulOscuro: darkblue;
+    --azulPuro: #00B7FA;
+    --azulBoton: #0DA2FF;
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+
+/* Estilos Generales */
+
+
+/* Pagina Principal */
+
+a {
+    text-decoration: none;
+}
+
+h1,
+h2 {
+    text-align: center;
+}
+
+h1 {
+    color: var(--azulPuro);
+    font-size: 4rem;
+}
+
+body {
+    background-color: var(--blanco);
+    font-size: 2rem;
+}
+
+.sidebar {
+    background-color: var(--azulOscuro);
+    border: 1px solid #000;
+    height: 80rem;
+}
+
+@media (min-width: 768px) {
+    .contenido_principal {
+        display: grid;
+        grid-template-columns: 1fr 3fr;
+        column-gap: 2rem;
+    }
+}
+
+.boton {
+    color: var(--blanco);
+    text-align: center;
+    text-decoration: none;
+    text-transform: capitalize;
+    font-size: 1.8rem;
+    font-weight: 700;
+    padding: 1rem;
+    margin-bottom: 2rem;
+    border: none;
+}
+
+.boton--primario {
+    background-color: var(--azulBoton);
+}
+
+.boton:hover {
+    cursor: pointer;
+    background: var(--azulOscuro);
+}
+
+.boton-edit {
+    background-color: var(--azulOscuro);
+    margin-right: 1rem;
+}
+
+.boton-edit:hover {
+    background-color: var(--azulPuro);
+}
+
+.boton-delete {
+    background-color: var(--azulPuro);
+}
+
+.cabecera {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+/* PARTE DE BUSQUEDA Y BOTON DE AÑADIR PRODUCTO */
+
+.busqueda_boton {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 2rem;
+}
+
+
+/* IMPUTS */
+
+input[type="text"] {
+    height: 3rem;
+    border: 1px solid var(--azulPuro);
+}
+
+
+/* BOTON DE BUSQUEDA */
+
+input[type="search"] {
+    background-image: url("../css/img/lupa.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    width: 3rem;
+    height: 3.5rem;
+    text-indent: -9999px;
+    border: none;
+    padding-left: 4rem;
+    cursor: pointer;
+}
+
+
+/* NOTIFICACIONES DE GUARDADO EN EL FORMULARIO */
+
+.message {
+    width: 50%;
+    padding: 1rem;
+    border: 1px solid #eee;
+}
+
+.success {
+    background: var(--azulBoton);
+    color: var(--blanco);
+}
+
+.message a {
+    color: var(--blanco);
+}
+
+.failed {
+    background: var(--azulOscuro);
+    color: var(--blanco);
+}
+
+
+/* ESTILOS PAGINA DE PRODUCTOS*/
+
+.productos {
+    display: grid;
+    grid-template-columns: repeat(8, 2fr);
+    column-gap: 6rem;
+    border-bottom: 1px solid var(--azulBoton);
+    text-decoration: none;
+    text-align: center;
+}
+
+.productos img {
+    width: 10rem;
+}
+
+.leyendas {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    column-gap: 2rem;
+    text-align: center;
+}
+
+.productos a {
+    text-decoration: none;
+    color: var(--negro);
+}
+
+
+/* ESTILOS PRODUCTO DETALLADO */
+
+img {
+    width: 30rem;
+}

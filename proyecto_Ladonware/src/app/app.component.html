@@ -1,0 +1,27 @@
+<div class="contenedor contenido_principal">
+
+    <aside class="sidebar">
+        <a [routerLink]="['/']">
+            <h1>Ladonware</h1>
+        </a>
+    </aside>
+
+    <main>
+        <h2>Prueba Técnica Full-Stack Developers</h2>
+        <header class="cabecera">
+            <h3>
+                Productos
+            </h3>
+            <div class="busqueda_boton">
+                <form action="#" id="busqueda" method="post" class="formulario">
+                    <input class="" type="text" id="buscador">
+                    <input type="search" id="submit-buscador" class="submit-buscador">
+                </form>
+                <a class="boton boton--primario" [routerLink]="['/crear-producto']">+ Añadir Producto</a>
+            </div>
+        </header>
+        <router-outlet></router-outlet>
+
+    </main>
+
+</div>
